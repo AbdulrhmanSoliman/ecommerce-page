@@ -109,12 +109,11 @@ let allPic = document.querySelectorAll(".thumbnails img");
 
 allPic.forEach((e) => {
   e.onclick = () => {
-    let splImg = e.src.split("");
-    splImg.splice(90, 10);
+    let splImg = e.src.replace("-thumbnail", "");
     if (lightbox.classList.contains("active")) {
-      productImg[1].src = splImg.join("");
+      productImg[1].src = splImg;
     } else {
-      productImg[0].src = splImg.join("");
+      productImg[0].src = splImg;
     }
     allPic.forEach((e) => {
       e.classList.remove("active");
